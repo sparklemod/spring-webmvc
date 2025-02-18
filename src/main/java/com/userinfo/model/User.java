@@ -1,30 +1,29 @@
 package com.userinfo.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String firstName;
+    private String name;
 
-    @Column(name = "last_name")
-    private String lastName;
+    private String surname;
 
-    @Column(name = "email")
+    @Email(message = "Invalid email format")
     private String email;
 
     public User() {
     }
 
-    public User(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String name, String surname, String email) {
+        this.name = name;
+        this.surname = surname;
         this.email = email;
     }
 
@@ -36,20 +35,20 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String firstName) {
+        this.name = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setSurname(String lastName) {
+        this.surname = lastName;
     }
 
     public String getEmail() {
@@ -64,8 +63,8 @@ public class User {
     public String toString() {
         return "User {" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }

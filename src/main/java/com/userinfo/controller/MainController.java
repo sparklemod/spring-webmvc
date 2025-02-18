@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
-	@GetMapping(value = "/")
-	public String printIndex(ModelMap model) {
-		return "redirect:/users";
-	}
+    @GetMapping(value = "/")
+    public String printIndex() {
+        return "redirect:/users";
+    }
 }
