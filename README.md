@@ -15,5 +15,4 @@
 Таблица и начальные данные создаются автоматически
 
 ![ALT TEXT](src/main/resources/static/img/img_2.png)
-
 ![ALT TEXT](src/main/resources/static/img/img_1.png)
