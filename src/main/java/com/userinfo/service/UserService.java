@@ -1,17 +1,36 @@
 package com.userinfo.service;
 
 import com.userinfo.model.User;
+import com.userinfo.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface UserService {
-    List<User> getAllUsers();
+@Service
+public class UserService {
+    private final UserRepository userRepository;
 
-    void createUser(User user);
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
-    void updateUser(User user);
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
 
-    User getUser(Long id);
+    public void createOrUpdateUser(User user) {
+        if (user.getId() == null) {
+            userRepository.create(user);
+        } else {
+            userRepository.update(user);
+        }
+    }
 
-    void deleteUser(Long id);
+    public User getUser(Long id) {
+        return userRepository.findById(id);
+    }
+
+    public boolean deleteUser(Long id) {
+        return userRepository.delete(id);
+    }
 }
