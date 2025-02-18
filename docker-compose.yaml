@@ -8,8 +8,3 @@ services:
       - '44444:3306'
     volumes:
       - ./mysql/db:/var/lib/mysql
-
-networks:
-  default:
-    name: spring-hibernate
-    driver: bridge
