@@ -19,7 +19,7 @@ import java.beans.PropertyVetoException;
 
 @Configuration
 @EnableTransactionManagement
-@PropertySource("classpath:db.properties")
+@PropertySource("classpath:application.properties")
 public class AppConfig {
 
     @Autowired

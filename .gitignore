@@ -2,3 +2,5 @@ mysql/db
 .idea/
 target/
 log/
+
+*.iml
