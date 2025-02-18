@@ -9,6 +9,6 @@ public class MainController {
 
 	@GetMapping(value = "/")
 	public String printIndex(ModelMap model) {
-		return "index";
+		return "redirect:/users";
 	}
 }
